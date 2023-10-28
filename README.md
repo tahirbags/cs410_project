@@ -1,12 +1,14 @@
+# CS410 Project Team "HAAAT"
+
 What are the names and NetIDs of all your team members? Who is the captain? The captain will have more administrative duties than team members.
 
-*Tahir Bagasrawala - tahirib2 
-*Ashwin Saxena - ashwins2 
-*Aryan Gandhi - aryang6 
-*Abrielle Agron - aa106 (Captain) 
+- Tahir Bagasrawala (tahirib2)
+- Ashwin Saxena (ashwins2)
+- Aryan Gandhi (aryang6)
+- Abrielle Agron (aa106) (Captain)
 
 What is the type of your project: Is it Data Set Creation or Leaderboard Competition Creation? 
-*Leaderboard Competition Creation
+- Leaderboard Competition Creation
 
 If your project is Data Set Creation, what is the novelty of your data set as compared with all the existing data sets? Which of the existing data sets is the closet to yours? What new task can your new data set be used to evaluate? How do you plan to create the data set? 
 *N/A
