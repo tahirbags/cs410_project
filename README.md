@@ -6,6 +6,7 @@ What are the names and NetIDs of all your team members? Who is the captain? The 
 - Ashwin Saxena (ashwins2)
 - Aryan Gandhi (aryang6)
 - Abrielle Agron (aa106) (Captain)
+- Harish Venkata (hkv2)
 
 What is the type of your project: Is it Data Set Creation or Leaderboard Competition Creation? 
 - Leaderboard Competition Creation
