@@ -2,11 +2,11 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 class GradientBoostingClassifierModel:
     def __init__(self):
-        self.model.n_estimators = 100
-        self.model.learning_rate = 1.0
-        self.model.max_depth = 1
-        self.model.random_state = 0
-        self.model = GradientBoostingClassifierModel()
+        self.model = GradientBoostingClassifier(n_estimators = 100, learning_rate = 1.0, max_depth = 1, random_state = 0)
+        #self.n_estimators = 100
+        #self.learning_rate = 1.0
+        #self.max_depth = 1
+        #self.random_state = 0
 
     def train(self, X_train, y_train):
         self.model.fit(X_train.todense(), y_train)

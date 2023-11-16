@@ -50,7 +50,7 @@ if __name__ == '__main__':
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
-        #('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel') #TB
+        ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
         #('models/svc.py', 'SVCModel'), #TB
         # Add more models here
     ]
