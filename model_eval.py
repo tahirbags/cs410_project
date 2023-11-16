@@ -47,14 +47,17 @@ if __name__ == '__main__':
     # List of models to evaluate - each entry is a (file_path, class_name) tuple
     models_to_evaluate = [
         ('models/model1.py', 'LogisticModel'),
-        ('models/linear.py', 'LinearModel')
+        ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
+        ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
+        ('models/GaussianNB.py', 'GaussianNBModel'), #TB
+        #('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel') #TB
+        #('models/svc.py', 'SVCModel'), #TB
         # Add more models here
     ]
 
     # Evaluate each model
     for model_path, class_name in models_to_evaluate:
         model = load_model(model_path, class_name)
-        #print (model_path, class_name)
         model.train(X_train, y_train)
         results = evaluate_model(model, X_test, y_test)
         print(f'Results for {class_name}: {results}')

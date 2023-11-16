@@ -1,8 +1,8 @@
-from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
 
-class LinearModel:
+class KNeighborsClassifierModel:
     def __init__(self):
-        self.model = LinearRegression()
+        self.model = KNeighborsClassifier()
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
