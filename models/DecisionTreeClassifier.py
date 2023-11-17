@@ -2,7 +2,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 class DecisionTreeClassifierModel:
     def __init__(self):
-        self.model = DecisionTreeClassifier()
+        self.model = DecisionTreeClassifier(max_depth=5, random_state=42)
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
