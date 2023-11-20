@@ -2,12 +2,14 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import precision_recall_curve
 import numpy as np
 import sys
 import os
 import time
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+import re
 
 def load_and_preprocess_data(csv_path):
     data = pd.read_csv(csv_path)
@@ -37,7 +39,7 @@ def evaluate_model(model, X_test, y_test):
         'accuracy': accuracy_score(y_test, predictions),
         'precision': precision_score(y_test, predictions, average='binary'),
         'recall': recall_score(y_test, predictions, average='binary'),
-        'f1_score': f1_score(y_test, predictions, average='binary')
+        'f1_score': f1_score(y_test, predictions, average='binary'),
     }
 
 if __name__ == '__main__':
@@ -50,28 +52,58 @@ if __name__ == '__main__':
     # List of models to evaluate - each entry is a (file_path, class_name) tuple
     models_to_evaluate = [
         ('models/model1.py', 'LogisticModel'),
-        ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), #TB
+        #('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), #TB
         ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'), #TB
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
-#        ('models/svc.py', 'SVCModel'), #TB
+        #('models/svc.py', 'SVCModel'), #TB
         # Add more models here
     ]
-
+    
+    #start time
     start_time = time.time()
-
-   # Evaluate each model
+    # Evaluate each model
     for model_path, class_name in models_to_evaluate:
         model = load_model(model_path, class_name)
         model.train(X_train, y_train)
         results = evaluate_model(model, X_test, y_test)
         print(f'Results for {class_name}: {results}')
+        
+        #time elapsed to generate predictions
         print("Elapsed: {} seconds".format(round(time.time() - start_time, 4)))
+        
+        #calculate precision and recall re: precision recall curve
+        y_score = model.predict(X_test)
+        precision, recall, thresholds = precision_recall_curve(y_test, y_score)
 
+        #create random colors
+        colors = np.random.rand(3)
+        
+        #plot precision recall curve
+        fig, ax = plt.subplots()
+        ax.plot(recall, precision, c=colors, label=f'{class_name}')
 
-
+        #add axis labels to plot
+        ax.set_title('Precision-Recall Curve')
+        ax.set_ylabel('Precision')
+        ax.set_xlabel('Recall')
+        ax.legend()
+    
+        #display plot
+        plt.show()
+    """
+    #add axis labels to plot
+    ax.set_title('Precision-Recall Curve')
+    ax.set_ylabel('Precision')
+    ax.set_xlabel('Recall')
+    ax.legend()
+    
+    #display plot
+    plt.show()
+    """
+    
 # # Function to read a CSV  file and return the data
 # def read_csv(file_path, target_column):
 #     data = pd.read_csv(file_path)
