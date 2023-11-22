@@ -94,7 +94,6 @@ if __name__ == '__main__':
     for model_path, class_name in models_to_evaluate:
         model = load_model(model_path, class_name)
 
-        # Train models differently based on type
         if class_name in ['KMeansModel', 'LDAModel']:
             model.train(X_train)
             results = evaluate_model(model, X_test, model_name=class_name)
@@ -104,10 +103,8 @@ if __name__ == '__main__':
 
         print(f'Results for {class_name}: {results}')
 
-        # Time elapsed to generate predictions
         print("Elapsed: {} seconds".format(round(time.time() - start_time, 4)))
 
-        # Calculate precision and recall for supervised models only
         if class_name not in ['KMeansModel', 'LDAModel']:
             try:
                 # Using predict_proba if available for a more detailed curve
@@ -118,7 +115,6 @@ if __name__ == '__main__':
 
             precision, recall, thresholds = precision_recall_curve(y_test, y_score)
 
-            # Create random colors for each model's curve
             colors = np.random.rand(3)
 
             # Plot precision-recall curve
