@@ -76,7 +76,8 @@ if __name__ == '__main__':
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
 
-
+        ('models/Kmeans.py', 'KMeansModel')
+        ('models/LatentDirichletAllocation.py', 'LDAModel')
 
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
