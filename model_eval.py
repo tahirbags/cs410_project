@@ -76,7 +76,8 @@ if __name__ == '__main__':
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
 
-
+        ('models/Kmeans.py', 'KMeansModel'),
+        ('models/LatentDirichletAllocation.py', 'LDAModel'),
 
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
@@ -84,42 +85,49 @@ if __name__ == '__main__':
         # Add more models here
     ]
     
-    #start time
+    fig, ax = plt.subplots()
+
+    # Start time
     start_time = time.time()
+
     # Evaluate each model
     for model_path, class_name in models_to_evaluate:
         model = load_model(model_path, class_name)
-        model.train(X_train, y_train)
-        
+
         if class_name in ['KMeansModel', 'LDAModel']:
+            model.train(X_train)
             results = evaluate_model(model, X_test, model_name=class_name)
         else:
+            model.train(X_train, y_train)
             results = evaluate_model(model, X_test, y_test)
 
         print(f'Results for {class_name}: {results}')
-        
-        #time elapsed to generate predictions
+
         print("Elapsed: {} seconds".format(round(time.time() - start_time, 4)))
-        
-        #calculate precision and recall re: precision recall curve
-        y_score = model.predict(X_test)
-        precision, recall, thresholds = precision_recall_curve(y_test, y_score)
 
-        #create random colors
-        colors = np.random.rand(3)
-        
-        #plot precision recall curve
-        fig, ax = plt.subplots()
-        ax.plot(recall, precision, c=colors, label=f'{class_name}')
+        if class_name not in ['KMeansModel', 'LDAModel']:
+            try:
+                # Using predict_proba if available for a more detailed curve
+                y_score = model.predict_proba(X_test)[:, 1]
+            except AttributeError:
+                # Fallback to predict if predict_proba is not available
+                y_score = model.predict(X_test)
 
-        #add axis labels to plot
-        ax.set_title('Precision-Recall Curve')
-        ax.set_ylabel('Precision')
-        ax.set_xlabel('Recall')
-        ax.legend()
-    
-        #display plot
-        plt.show()
+            precision, recall, thresholds = precision_recall_curve(y_test, y_score)
+
+            colors = np.random.rand(3)
+
+            # Plot precision-recall curve
+            ax.plot(recall, precision, c=colors, label=f'{class_name}')
+
+    # Add axis labels and title to the plot, outside the loop
+    ax.set_title('Precision-Recall Curve')
+    ax.set_ylabel('Precision')
+    ax.set_xlabel('Recall')
+    ax.legend()
+
+    # Display the combined plot after all models have been processed
+    plt.show()
     """
     #add axis labels to plot
     ax.set_title('Precision-Recall Curve')
