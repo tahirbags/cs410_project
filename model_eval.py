@@ -10,6 +10,20 @@ import time
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import re
+from sklearn.metrics import silhouette_score
+
+def evaluate_kmeans(model, X_test):
+    labels = model.predict(X_test)
+    score = silhouette_score(X_test, labels)
+    return {'silhouette_score': score}
+
+from sklearn.metrics import silhouette_score
+
+def evaluate_kmeans(model, X_test):
+    labels = model.predict(X_test)
+    score = silhouette_score(X_test, labels)
+    return {'silhouette_score': score}
+
 
 def load_and_preprocess_data(csv_path):
     data = pd.read_csv(csv_path)
@@ -56,6 +70,9 @@ if __name__ == '__main__':
         ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'), #TB
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
+
+
+
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
         #('models/svc.py', 'SVCModel'), #TB
