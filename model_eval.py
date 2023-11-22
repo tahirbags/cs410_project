@@ -10,6 +10,20 @@ import time
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import re
+from sklearn.metrics import silhouette_score
+
+def evaluate_kmeans(model, X_test):
+    labels = model.predict(X_test)
+    score = silhouette_score(X_test, labels)
+    return {'silhouette_score': score}
+
+
+def evaluate_lda(model, X_test):
+    # Perplexity: the lower, the better
+    perplexity = model.model.perplexity(X_test)
+    return {'perplexity': perplexity}
+
+
 
 def load_and_preprocess_data(csv_path):
     data = pd.read_csv(csv_path)
@@ -32,15 +46,20 @@ def load_model(model_path, class_name):
     model_class = getattr(model_module, class_name)
     return model_class()
 
-def evaluate_model(model, X_test, y_test):
-    predictions = model.predict(X_test)
+def evaluate_model(model, X_test, y_test=None, model_name=''):
+    if model_name == 'KMeansModel':
+        return evaluate_kmeans(model, X_test)
+    elif model_name == 'LDAModel':
+        return evaluate_lda(model, X_test)
+    else:
+        predictions = model.predict(X_test)
 
-    return {
-        'accuracy': accuracy_score(y_test, predictions),
-        'precision': precision_score(y_test, predictions, average='binary'),
-        'recall': recall_score(y_test, predictions, average='binary'),
-        'f1_score': f1_score(y_test, predictions, average='binary'),
-    }
+        return {
+            'accuracy': accuracy_score(y_test, predictions),
+            'precision': precision_score(y_test, predictions, average='binary'),
+            'recall': recall_score(y_test, predictions, average='binary'),
+            'f1_score': f1_score(y_test, predictions, average='binary'),
+        }
 
 if __name__ == '__main__':
     # Path to your training dataset
@@ -56,6 +75,9 @@ if __name__ == '__main__':
         ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'), #TB
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
+
+
+
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
         #('models/svc.py', 'SVCModel'), #TB
@@ -68,7 +90,12 @@ if __name__ == '__main__':
     for model_path, class_name in models_to_evaluate:
         model = load_model(model_path, class_name)
         model.train(X_train, y_train)
-        results = evaluate_model(model, X_test, y_test)
+        
+        if class_name in ['KMeansModel', 'LDAModel']:
+            results = evaluate_model(model, X_test, model_name=class_name)
+        else:
+            results = evaluate_model(model, X_test, y_test)
+
         print(f'Results for {class_name}: {results}')
         
         #time elapsed to generate predictions
