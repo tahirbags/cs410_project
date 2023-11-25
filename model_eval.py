@@ -81,7 +81,7 @@ if __name__ == '__main__':
 
         ('models/GaussianNB.py', 'GaussianNBModel'), #TB
         ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
-        #('models/svc.py', 'SVCModel'), #TB
+        ('models/svc.py', 'SVCModel'), #TB
         # Add more models here
     ]
     
