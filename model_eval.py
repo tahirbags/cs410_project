@@ -71,7 +71,7 @@ if __name__ == '__main__':
     # List of models to evaluate - each entry is a (file_path, class_name) tuple
     models_to_evaluate = [
         ('models/model1.py', 'LogisticModel'),
-        #('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), #TB
+        ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), #AA
         ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'), #TB
         ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
