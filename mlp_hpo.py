@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # Start time
     start_time = time.time()
     #HPO started
-    print('Hyperparameter tuning in progress..this could take a 10-15 mins to complete')
+    print('Hyperparameter tuning in progress..this could take 10-15 mins to complete')
 
     mlp_model = MLPClassifier(max_iter=10000)
     parameter_space = {
