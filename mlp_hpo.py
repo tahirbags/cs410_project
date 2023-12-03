@@ -31,6 +31,10 @@ Hyperparameter selection:
 
 6. Update best parameters in mlp.py
 
+7. Test the "best" model against the test data set
+
+8. Re-run steps 1 - 7 as needed
+
 '''
 
 #load and pre-process the data
