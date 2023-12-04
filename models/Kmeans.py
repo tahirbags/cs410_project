@@ -11,7 +11,7 @@ Tolerance (tol): (0.0001, 0.0005, 0.001)
 """
 
 class KMeansModel:
-    #optimally chosen values to get Silhouette score of ~0.77
+    #optimally chosen values to get Silhouette score of ~0.57
     def __init__(self, n_clusters=4, init='k-means++', n_init=10, max_iter=300, tol=0.0001):
         """
         Initialize the KMeans model with specified parameters.
