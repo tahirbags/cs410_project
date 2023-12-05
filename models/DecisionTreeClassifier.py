@@ -18,10 +18,10 @@ class DecisionTreeClassifierModel:
    """
 
     def __init__(self):
-        '''
+        """
         Hyperparameter selection:
         
-        '''
+        """
         self.model = DecisionTreeClassifier(max_depth=5, random_state=42)
 
     def train(self, X_train, y_train):
