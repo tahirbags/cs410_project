@@ -19,7 +19,7 @@ class KNeighborsClassifierModel:
    """
 
     def __init__(self, n_neighbors=100, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski'):
-        '''
+        """
         Hyperparameter selection:
         n_neighbors=100:
             With a large and diverse dataset, using a higher number of neighbors can help in making more stable and 
@@ -42,7 +42,7 @@ class KNeighborsClassifierModel:
             With p=2, the Minkowski metric becomes equivalent to the Euclidean metric, which is effective for many datasets, 
             particularly those where features represent spatial or geometric properties. Euclidean distance is the most commonly 
             used distance metric for KNN, making it a good starting point.
-        '''
+        """
         self.model = KNeighborsClassifier(n_neighbors=n_neighbors, weights=weights, algorithm=algorithm, leaf_size=leaf_size, p=p, metric=metric)
 
     def train(self, X_train, y_train):
