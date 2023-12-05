@@ -21,7 +21,7 @@ class SVCModel:
 
     def __init__(self):
         """
-        Hyperparameter tuning:
+        Hyperparameter selection:
         """
         self.model = LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
           intercept_scaling=1, loss='squared_hinge', max_iter=1000,
