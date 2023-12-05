@@ -13,12 +13,42 @@ import re
 from sklearn.metrics import silhouette_score
 
 def evaluate_kmeans(model, X_test):
+    """Evaluates K-means model usuing Silhouette Score
+    
+    Parameters
+    ----------
+    model : Kmeans object
+        Kmeans model object created in Kmeans.py
+    X_test : array
+        Test data for given dataset
+    labels: array
+        Labels for test data
+    
+    Returns
+    -------
+    dictionary with a key of 'silhouette score' and a value of the calculated Silhouette Score
+    """
     labels = model.predict(X_test)
     score = silhouette_score(X_test, labels)
     return {'silhouette_score': score}
 
 
 def evaluate_lda(model, X_test):
+     """Evaluates LDA model using Perplexity, a lower score is better
+    
+    Parameters
+    ----------
+    model : LDA object
+        LDA model object created in LatentDirichletAllocation.py
+    X_test : array
+        Test data for given dataset
+    labels: array
+        Labels for test data
+    
+    Returns
+    -------
+    dictionary with a key of 'perplexity' and a value of the calculated Perplexity
+    """
     # Perplexity: the lower, the better
     perplexity = model.model.perplexity(X_test)
     return {'perplexity': perplexity}
@@ -26,6 +56,24 @@ def evaluate_lda(model, X_test):
 
 
 def load_and_preprocess_data(csv_path):
+     """Loads data, performs simple pre-processing, splits into test and train datasets
+    
+    Parameters
+    ----------
+    csv_path: string
+        path to csv containing dataset
+
+    Returns
+    -------
+    X_train: array
+        training data for the given dataset
+    X_test: array
+        test data for the given dataset
+    Y_train: array
+        labels for the training data for the given dataset
+     Y_test: array
+        labels for the test data for the given dataset
+    """
     data = pd.read_csv(csv_path)
    
     vectorizer = TfidfVectorizer(stop_words='english', max_features=5000)
@@ -38,6 +86,20 @@ def load_and_preprocess_data(csv_path):
     return X_train, X_test, y_train, y_test
 
 def load_model(model_path, class_name):
+     """Loads and initializes a specific model
+    
+    Parameters
+    ----------
+    model_path: string
+        path to python file containing class information for the model
+    class_name: string
+        name of Class containing model
+
+    Returns
+    -------
+    model_class() : Object
+        Class object of specified model
+    """
     model_directory, model_file = os.path.split(model_path)
     model_name = model_file.replace('.py', '')
     sys.path.insert(0, model_directory)
@@ -47,6 +109,22 @@ def load_model(model_path, class_name):
     return model_class()
 
 def evaluate_model(model, X_test, y_test=None, model_name=''):
+    """Evaluates a given models using specific methods for unsupervised models, and accuracy, precision, recall, and F1 score 
+        for all others
+    
+    Parameters
+    ----------
+    model: object
+        Instance of the specific model Class
+    X_test: array
+        test data for the given dataset
+     Y_test: array
+        labels for the test data for the given dataset. Default is None for unsupervised models
+
+    Returns
+    -------
+    dictionary containing score types as keys, scores as values
+    """
     if model_name == 'KMeansModel':
         return evaluate_kmeans(model, X_test)
     elif model_name == 'LDAModel':
@@ -71,20 +149,19 @@ if __name__ == '__main__':
     # List of models to evaluate - each entry is a (file_path, class_name) tuple
     models_to_evaluate = [
         ('models/model1.py', 'LogisticModel'),
-        ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), #AA
-        ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'), #TB
-        ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), #TB
+        ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), 
+        ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'),
+        ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), 
         ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
 
         ('models/Kmeans.py', 'KMeansModel'),
         ('models/LatentDirichletAllocation.py', 'LDAModel'),
 
-        ('models/GaussianNB.py', 'GaussianNBModel'), #TB
-        ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), #TB
-        ('models/svc.py', 'SVCModel'), #TB
-        ('models/mlp.py', 'MLPClassifierModel'), #TB
+        ('models/GaussianNB.py', 'GaussianNBModel'), 
+        ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), 
+        ('models/svc.py', 'SVCModel'),
+        ('models/mlp.py', 'MLPClassifierModel'), 
 
-        # Add more models here
     ]
     
     fig, ax = plt.subplots()
@@ -122,7 +199,7 @@ if __name__ == '__main__':
             # Plot precision-recall curve
             ax.plot(recall, precision, c=colors, label=f'{class_name}')
 
-    # performance evaluatio metrics 
+    # performance evaluation metrics 
     print(classification_report(y_score, y_test))
 
     # Add axis labels and title to the plot, outside the loop
