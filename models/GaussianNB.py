@@ -18,7 +18,7 @@ class GaussianNBModel:
    """
     def __init__(self):
         """
-        Hyperparameter tuning:
+        Hyperparameter selection:
 
         """
         self.model = GaussianNB()
