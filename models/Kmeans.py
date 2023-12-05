@@ -19,7 +19,7 @@ class KMeansModel:
 
     def __init__(self, n_clusters=4, init='k-means++', n_init=10, max_iter=300, tol=0.0001):
         """
-        Hyperparameter tuning:
+        Hyperparameter selection:
         Tuning was done by selecting the values from the below options which maximized the Silhouette score (0.77)
             Number of Clusters (n_clusters): (2 to 11)
             Initialization Method (init): (kmeans++ or random)
