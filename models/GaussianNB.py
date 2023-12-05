@@ -17,6 +17,10 @@ class GaussianNBModel:
        Predicts labels for given test data
    """
     def __init__(self):
+        """
+        Hyperparameter tuning:
+
+        """
         self.model = GaussianNB()
 
     def train(self, X_train, y_train):
