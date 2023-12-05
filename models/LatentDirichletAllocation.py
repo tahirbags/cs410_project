@@ -11,7 +11,7 @@ class LDAModel:
 
    Methods
    -------
-   train(X_train, y_train)
+   train(X_train, y_train=None)
        Trains the model using given training data, y_train is None as this is an unsupervised model
    predict(X_test)
        Predicts labels for given test data
