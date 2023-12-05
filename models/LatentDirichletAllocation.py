@@ -19,7 +19,7 @@ class LDAModel:
 
     def __init__(self, n_components=5, learning_method='online', learning_decay=0.7, max_iter=10, doc_topic_prior=None, topic_word_prior=None):
         """
-        Hyperparameter tuning:
+        Hyperparameter selection:
         
         """
         self.model = LatentDirichletAllocation(n_components=n_components, learning_method=learning_method, 
