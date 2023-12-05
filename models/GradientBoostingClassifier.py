@@ -18,9 +18,9 @@ class GradientBoostingClassifierModel:
    """
 
     def __init__(self):
-        '''
+        """
         Hyperparameter selection:
-        '''
+        """
         self.model = GradientBoostingClassifier(n_estimators = 100, learning_rate = 1.0, max_depth = 1, random_state = 0)
         #self.n_estimators = 100
         #self.learning_rate = 1.0
