@@ -1,7 +1,29 @@
 from sklearn.tree import DecisionTreeClassifier
 
 class DecisionTreeClassifierModel:
+   """
+   A class used to represent an AdaBoost Classfier Model, a meta-estimator that begins by fitting a classifier on the 
+    original dataset and then fits additional copies of the classifier on the same dataset but where the weights of 
+    incorrectly classified instances are adjusted such that subsequent classifiers focus more on difficult cases.
+
+   Attributes
+   ----------
+   model :
+       an instance of the AdaBoostClassifier Class from scikit-learn
+
+   Methods
+   -------
+   train(X_train, y_train)
+       Trains the model using given training data
+   predict(X_test)
+       Predicts labels for given test data
+   """
+
     def __init__(self):
+        '''
+        Hyperparameter selection:
+        
+        '''
         self.model = DecisionTreeClassifier(max_depth=5, random_state=42)
 
     def train(self, X_train, y_train):
