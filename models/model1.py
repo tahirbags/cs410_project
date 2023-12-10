@@ -21,7 +21,9 @@ class LogisticModel:
         """
          Hyperparameter selection:
 
-
+         List of parameters that can be trained:  
+         dict_keys(['C', 'class_weight', 'dual', 'fit_intercept', 'intercept_scaling', 'l1_ratio', 'max_iter', 'multi_class', 
+                     'n_jobs', 'penalty', 'random_state', 'solver', 'tol', 'verbose', 'warm_start'])
          
         """
        
