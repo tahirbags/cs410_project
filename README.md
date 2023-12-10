@@ -37,13 +37,13 @@ Lastly, we planned and recorded the demo video together.
 
 ## Install and Usage
 ### To Start
-1. Download this project (cs410_proj) and unzip the directory.
-2. Ensure you have a version of Python 3.0+ installed on your computer.
+- Download this project (cs410_proj) and unzip the directory.
+- Ensure you have a version of Python 3.0+ installed on your computer.
 
 ### To Add new models
-4. Open `model_eval.py`
-5. Create a new model `<your_model_here>.py` in /models folder
-6. Add a tuple for model file path and Model Class in the section of the code in `model_eval.py`
+- Open `model_eval.py`
+- Create a new model `<your_model_here>.py` in /models folder
+- Add a tuple for model file path and Model Class in the section of the code in `model_eval.py`
 
 Here's an example:
 
@@ -68,7 +68,7 @@ Here's an example:
 ```
 
 ### To Evaluate all models and view comparison of all models in a Precision-Recall plot
-4. Open Terminal and run `model_eval.py`
+- Open Terminal and run `model_eval.py`
    
 Here's an example:
 
@@ -76,12 +76,12 @@ Here's an example:
 python3 model_eval.py
 ```
 ### To Train Hyperparameters for the LDA and K-Means Model
-
+<! --- Aryan, please add text here -->
 
 
 ### To Train Hyperparameters for the MLP Model
-1. Open `mlp_hpo.py`
-2. Update `parameter_space` with the list of hyperparamters that would like to optimize in the model 
+- Open `mlp_hpo.py`
+- Update `parameter_space` with the list of hyperparamters that would like to optimize in the model 
 
 Here's an example:
 
@@ -95,15 +95,12 @@ parameter_space = {
     'learning_rate': ['constant','adaptive'],
     }
 ```
-3. Open Terminal and run `mlp_hpo.py`
+- Open Terminal and run `mlp_hpo.py`
 
 Here's an example:
 
 ```
 python3 mlp_hpo.py
 ``` 
-5. Once you've confirmed your "best" parameters, update them in `mlp.py`
-6. Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 
-
-
-
+- Once you've confirmed your "best" parameters, update them in `mlp.py`
+- Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 
