@@ -40,6 +40,7 @@ Lastly, we planned and recorded the demo video together.
 - Download this project (cs410_proj) and unzip the directory.
 - Ensure you have a version of Python 3.0+ installed on your computer.
 
+
 ### To Add new models
 - Open `model_eval.py`
 - Create a new model `<your_model_here>.py` in /models folder
@@ -75,8 +76,11 @@ Here's an example:
 ```
 python3 model_eval.py
 ```
+
+
 ### To Train Hyperparameters for the LDA and K-Means Model
 <! --- Aryan, please add text here -->
+
 
 
 ### To Train Hyperparameters for the MLP Model
