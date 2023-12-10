@@ -19,7 +19,9 @@ class GaussianNBModel:
     def __init__(self):
         """
         Hyperparameter selection:
-
+        
+        List of parameters that can be tuned:
+        dict_keys(['priors', 'var_smoothing'])
         """
         self.model = GaussianNB()
 
