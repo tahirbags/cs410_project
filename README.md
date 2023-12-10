@@ -42,7 +42,8 @@ Lastly, we planned and recorded the demo video together.
 
 ### To Add new models
 4. Open `model_eval.py`
-5. Add a tuple for model file path (location of the .py file) and Model Class
+5. Create a new model `<your_model_here>.py` in /models folder
+6. Add a tuple for model file path and Model Class in the section of the code in `model_eval.py`
 
 Here's an example:
 
