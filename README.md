@@ -3,6 +3,9 @@
 #### Team: "HAAAT"
 #### Members: *H*arish Venkata (hkv2), *A*brielle Agron (aa106), *A*ryan Gandhi (aryang6), *A*shwin Saxena (ashwins2), *T*ahir Bagasrawala (tahirib2)
 
+<font size=5>[README file inspired by this previous project]([https://youtu.be/8bDu_KHNICA](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description))</font> 
+
+
 <font size=5>[Demo Video Link](https://youtu.be/8bDu_KHNICA)</font>  <! --- update link and video presentation -->
 
 ## Project Description
