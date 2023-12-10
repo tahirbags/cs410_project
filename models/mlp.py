@@ -37,9 +37,13 @@ class MLPClassifierModel:
         7. Test the "best" model against the test data set
         
         8. Re-run steps 1 - 7 as needed
+
+        Best parameters found:
+         {'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (20,), 'learning_rate': 'constant', 'solver': 'sgd'}
+
         
         """
-        self.model = MLPClassifier(activation ='tanh', alpha=0.05, learning_rate='adaptive', solver='sgd')
+        self.model = MLPClassifier(activation ='tanh', alpha=0.05, hidden_layer_sizes=(20,), learning_rate='constant', solver='sgd')
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
