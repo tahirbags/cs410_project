@@ -18,6 +18,13 @@ from sklearn.linear_model import LogisticRegression
 
 class LogisticModel:
     def __init__(self):
+        """
+         Hyperparameter selection:
+
+
+         
+        """
+       
         self.model = LogisticRegression()
 
     def train(self, X_train, y_train):
