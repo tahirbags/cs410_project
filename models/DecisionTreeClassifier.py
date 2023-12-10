@@ -19,8 +19,9 @@ class DecisionTreeClassifierModel:
 
     def __init__(self):
         """
-        Hyperparameter selection:
-        
+         Hyperparameter selection:
+         List of parameters that can be tuned:
+         dict_keys(['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_impurity_split', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'random_state', 'splitter'])
         """
         self.model = DecisionTreeClassifier(max_depth=5, random_state=42)
 
