@@ -1,3 +1,23 @@
+# Leaderboard Competition Creation using Natural Language Processing with disaster tweets dataset
+
+#### Team: "HAAAT"
+#### Members: *H*arish Venkata (hkv2), *A*brielle Agron (aa106), *A*ryan Gandhi (aryang6), *A*shwin Saxena (ashwins2), *T*ahir Bagasrawala (tahirib2)
+
+<font size=5>[Demo Video Link](https://youtu.be/8bDu_KHNICA)</font> <! --- update link and video presentation.
+
+## Project Description
+*Leaderboard Competition* evaluates several generative and descriptive classifiers against Kaggle’s Natural Language Processing with Disaster Tweets to predict which tweets are about real disasters and which are not. ![image](https://github.com/tahirbags/cs410_project_public/assets/144145146/03f6b1ec-afc7-423d-98ac-69baa1ecb7d6)
+
+
+## Project Structure
+
+## Team Contributions
+
+## Install and Usage
+
+
+
+
 # CS410 Project Team - Name "HAAAT"
 
 What are the names and NetIDs of all your team members? Who is the captain? The captain will have more administrative duties than team members.
