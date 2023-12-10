@@ -86,6 +86,20 @@ python3 model_eval.py
 ### To Train Hyperparameters for all Models
 
 - Open `hpo_tune.py`
+- Choose a model that you want to tune
+
+```
+  # Pick a model you want to tune (Example of MLP Classifer below)
+  mlp_model = MLPClassifier(max_iter=10000)
+```
+  
+- Choose parameters for the model to update. The list of parameters for that model can be idenfied via the following:
+
+```
+  # List of parameters that can be trained for this model selection
+    print("List of parameters that can be trained: ", mlp_model.get_params().keys())
+```
+                 
 - Update `parameter_space` with the list of hyperparamters that would like to optimize in the model 
 
 ```
