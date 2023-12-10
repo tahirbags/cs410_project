@@ -83,14 +83,13 @@ python3 model_eval.py
 
 
 
-### To Train Hyperparameters for the MLP Model
-- Open `mlp_hpo.py`
+### To Train Hyperparameters for all Models
+
+- Open `hpo_tune.py`
 - Update `parameter_space` with the list of hyperparamters that would like to optimize in the model 
 
-Here's an example:
-
 ```
-#add parameters that you would like to optimize here
+#Example parameters for MLP Classifier model
 parameter_space = {
     'hidden_layer_sizes': [(10,30,10),(20,)],
     'activation': ['tanh', 'relu'],
@@ -99,12 +98,34 @@ parameter_space = {
     'learning_rate': ['constant','adaptive'],
     }
 ```
-- Open Terminal and run `mlp_hpo.py`
 
+- Once you've updated parameters for the model you'd like to tune, Open Terminal and run `hpo_tune.py`
+
+```
+python3 hpo_tune.py
+```
+- Choose a model that you would like to tune
+
+```
+[CASE sensitive] Choose one model to tune:
+    [MLP]
+    [AdaBoost]
+    [DecisionTree]
+    [NaiveBayes]
+    [Logistic]
+    [GradientBoosting]
+    [KNeighbors]
+    [svc]
+    [RandomForest]
+Which model would like to tune?
+```
+- The model tuning will begin (usually takes a few minutes to run and complete)
+- Once you've confirmed your "best" parameters, update them in `mlp.py`
 Here's an example:
 
 ```
-python3 mlp_hpo.py
+#Example results for best parameters for MLP Classifier model
+Best parameters found:
+ {'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (20,), 'learning_rate': 'constant', 'solver': 'sgd'}
 ``` 
-- Once you've confirmed your "best" parameters, update them in `mlp.py`
 - Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 
