@@ -22,8 +22,11 @@ class GaussianNBModel:
         
         List of parameters that can be tuned:
         dict_keys(['priors', 'var_smoothing'])
+
+        Best parameters found:
+         {'var_smoothing': 1.0}
         """
-        self.model = GaussianNB()
+        self.model = GaussianNB(var_smoothing=1.0)
 
     def train(self, X_train, y_train):
         self.model.fit(X_train.todense(), y_train)
