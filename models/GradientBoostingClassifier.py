@@ -20,12 +20,14 @@ class GradientBoostingClassifierModel:
     def __init__(self):
         """
         Hyperparameter selection:
+        List of parameters that can be trained:  dict_keys(['ccp_alpha', 'criterion', 'init', 'learning_rate', 'loss', 'max_depth', 
+                                                            'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_impurity_split', 
+                                                            'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 
+                                                            'n_estimators', 'n_iter_no_change', 'random_state', 'subsample', 'tol', 
+                                                            'validation_fraction', 'verbose', 'warm_start'])
+        
         """
         self.model = GradientBoostingClassifier(n_estimators = 100, learning_rate = 1.0, max_depth = 1, random_state = 0)
-        #self.n_estimators = 100
-        #self.learning_rate = 1.0
-        #self.max_depth = 1
-        #self.random_state = 0
 
     def train(self, X_train, y_train):
         self.model.fit(X_train.todense(), y_train)
