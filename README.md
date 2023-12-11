@@ -1,6 +1,6 @@
 # Leaderboard Competition Creation using Natural Language Processing with disaster tweets dataset
 
-#### Team: "HAAAT"
+#### Team: "HAAAT" for CS410 Group Project
 #### Members: *H*arish Venkata (hkv2), *A*brielle Agron (aa106), *A*ryan Gandhi (aryang6), *A*shwin Saxena (ashwins2), *T*ahir Bagasrawala (tahirib2)
 
 <font size=5>[README file](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description)</font> inspired by this previous project.
