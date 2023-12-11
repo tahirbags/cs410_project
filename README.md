@@ -144,4 +144,5 @@ Here's an example:
 Best parameters found:
  {'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (20,), 'learning_rate': 'constant', 'solver': 'sgd'}
 ``` 
+- Run the model with the new parameters against the test dataset and compare precision, recall, F1 scores.
 - Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 
