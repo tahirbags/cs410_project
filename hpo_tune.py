@@ -133,14 +133,13 @@ if __name__ == '__main__':
     elif model_to_tune == 'GradientBoosting': 
         mlp_model = GradientBoostingClassifier()
         
-        """
         parameter_space = {
-        'base_estimator': [model_to_boost],
+        'min_samples_split': [2,3,4],
+        #'criterion': ['friedman_mse', 'squared_error'],
         'learning_rate': [0.00001, 0.0001, 0.001, 0.01, 1, 2],
         'n_estimators': [1, 10, 50, 100, 150, 200],
-        'algorithm': ['SAMME', 'SAMME.R'],
+        'max_features': ['sqrt', 'log2'],
         }
-        """
 
 
     elif model_to_tune == 'KNeighbors': 
@@ -157,14 +156,12 @@ if __name__ == '__main__':
     elif model_to_tune == 'svc': 
         mlp_model = LinearSVC()
 
-        """
         parameter_space = {
-        'base_estimator': [model_to_boost],
-        'learning_rate': [0.00001, 0.0001, 0.001, 0.01, 1, 2],
-        'n_estimators': [1, 10, 50, 100, 150, 200],
-        'algorithm': ['SAMME', 'SAMME.R'],
+        'multi_class': ['ovr','crammer_singer'],
+        'fit_intercept': [0, 1],
+        'loss': ['hinge', 'squared_hinge'],
+        'penalty': ['l2', 'l2'],
         }
-        """
 
     elif model_to_tune == 'RandomForest': 
 
