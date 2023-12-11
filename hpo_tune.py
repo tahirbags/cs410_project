@@ -160,7 +160,7 @@ if __name__ == '__main__':
         'multi_class': ['ovr','crammer_singer'],
         'fit_intercept': [0, 1],
         'loss': ['hinge', 'squared_hinge'],
-        'penalty': ['l2', 'l2'],
+        'penalty': ['l1', 'l2'],
         }
 
     elif model_to_tune == 'RandomForest': 
