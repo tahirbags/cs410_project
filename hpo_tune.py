@@ -22,24 +22,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
+from sklearn.ensemble import GradientBoostingClassifier
 
-
-'''
-Hyperparameter selection:
-
-1. Run mlp_hpo.py
-
-2. Using GridSearchCV to find the optimal hyperparameters
-
-3. Set parameter_space to list hyperparameters to tune
-
-4. n_jobs -1 is for using all the CPU cores available, cv=5 is for cross validation, here it means 5-folds Stratified K-fold cross validation
-
-5. Print best parameters
-
-6. Update best parameters in mlp.py
-
-'''
 
 #load and pre-process the data
 def load_and_preprocess_data(csv_path):
@@ -141,14 +125,10 @@ if __name__ == '__main__':
     elif model_to_tune == 'NaiveBayes': 
         mlp_model = GaussianNB()
         
-        """
         parameter_space = {
-        'base_estimator': [model_to_boost],
-        'learning_rate': [0.00001, 0.0001, 0.001, 0.01, 1, 2],
-        'n_estimators': [1, 10, 50, 100, 150, 200],
-        'algorithm': ['SAMME', 'SAMME.R'],
+        #'var_smoothing': [1e-12, 1e-10, 1e-8, 1e-6, 1e-4, 1e-3, 1e-1, 1, 10, 100, 1000, 10000],
+        'var_smoothing': np.logspace(0,2, num=20),
         }
-        """
 
     elif model_to_tune == 'GradientBoosting': 
         mlp_model = GradientBoostingClassifier()
@@ -212,7 +192,13 @@ if __name__ == '__main__':
     print('Hyperparameter tuning in progress..this could take a 10-15 mins to complete')
 
     clf = GridSearchCV(mlp_model, parameter_space, n_jobs=-1, cv=5)
-    clf.fit(X_train, y_train) # X is train samples and y is the corresponding labels
+    
+    #apply fit
+    if model_to_tune == 'NaiveBayes': 
+        clf.fit (X_train.todense(), y_train) # X is train samples and y is the corresponding labels
+    else: 
+        clf.fit (X_train, y_train) # X is train samples and y is the corresponding labels
+    
     print('Best parameters found:\n', clf.best_params_)
     
     # calculate time elapsed for models to generate predictions
