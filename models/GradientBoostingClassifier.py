@@ -27,8 +27,8 @@ class GradientBoostingClassifierModel:
                                                             'validation_fraction', 'verbose', 'warm_start'])
         
         Best parameters found:
-         {'criterion': 'friedman_mse', 'learning_rate': 1, 'max_features': 'sqrt', 'min_samples_split': 4, 'n_estimators': 100}
-        
+        {'criterion': 'friedman_mse', 'learning_rate': 1, 'max_features': 'sqrt', 'min_samples_split': 4, 'n_estimators': 100}
+        {'learning_rate': 1, 'max_features': 'sqrt', 'min_samples_split': 4, 'n_estimators': 100}
         """
         self.model = GradientBoostingClassifier(n_estimators = 100, min_samples_split=4, learning_rate = 1.0, max_depth = 1, criterion = 'friedman_mse', max_features = 'sqrt')
 
