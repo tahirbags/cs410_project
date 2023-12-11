@@ -22,6 +22,10 @@ class SVCModel:
     def __init__(self):
         """
         Hyperparameter selection:
+
+        List of parameters that can be trained:  
+        dict_keys(['C', 'class_weight', 'dual', 'fit_intercept', 'intercept_scaling', 'loss', 'max_iter', 'multi_class', 
+        'penalty', 'random_state', 'tol', 'verbose'])
         """
         self.model = LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
           intercept_scaling=1, loss='squared_hinge', max_iter=1000,
