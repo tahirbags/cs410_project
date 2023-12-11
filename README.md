@@ -29,7 +29,7 @@ This project falls under Theme: Leaderboard Competition.
   10. LogisticRegression.py: A [Logistic Regression (baseline)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) model (also known as logit or MaxEnt) is a popular for classification problems and is our baseline for this project.
   11. svc.py: A [C-Support Vector Classification](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) is a linear support vector classification model.
 - model_eval.py: Contains the function that evaluates all 11 models and plots a Precision-Recall curve to compare model results.
-- hpo_tune.py: Is an interactive helper function to run hyper-parameter tuning (HPO) for any model based on user input.
+- hpo_tune.py: Is an interactive helper function to run hyper-parameter tuning (HPO) for any model based on user selection.
 - sample_submission.csv, test.csv, train.csv is the evaluation, testing and training data set respectively. 
 
 
