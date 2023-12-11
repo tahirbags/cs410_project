@@ -85,7 +85,7 @@ python3 model_eval.py
 
 
 
-### 5. To optimize Hyperparameters for all remaining NLP Models
+### 5. To optimize Hyperparameters (HPO) for all remaining NLP Models
 
 - Open `hpo_tune.py`
 - Choose a model that you want to tune
