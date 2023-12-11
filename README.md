@@ -38,12 +38,12 @@ All five members worked together to research various models (e.g. Random Forest,
 Lastly, we planned and recorded the demo video together.
 
 ## Install and Usage
-### To Start
+### 1. To Start
 - Download this project (cs410_proj) and unzip the directory.
 - Ensure you have a version of Python 3.0+ installed on your computer.
 
 
-### To Add new models
+### 2. To add new NLP Models
 - Open `model_eval.py`
 - Create a new model `<your_model_here>.py` in /models folder
 - Add a tuple for model file path and Model Class in the section of the code in `model_eval.py`
@@ -70,7 +70,7 @@ Here's an example:
 # Add more models here
 ```
 
-### To Evaluate all models and view comparison of all models in a Precision-Recall plot
+### 3. To evaluate and compare all NLP Models in a Precision-Recall plot
 - Open Terminal and run `model_eval.py`
    
 Here's an example:
@@ -80,12 +80,12 @@ python3 model_eval.py
 ```
 
 
-### To Train Hyperparameters for the LDA and K-Means Model
+### 4. To optimize Hyperparameters (HPO) for the LDA and K-Means Model
 <! --- Aryan, please add text here -->
 
 
 
-### To Train Hyperparameters for all Models
+### 5. To optimize Hyperparameters for all remaining NLP Models
 
 - Open `hpo_tune.py`
 - Choose a model that you want to tune
