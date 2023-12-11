@@ -27,7 +27,7 @@ This project falls under Theme: Leaderboard Competition.
   8. **RandomForestClassifier.py**: A [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) is a meta estimator that fits several decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
   9 **mlp.py**: A [Multi-Layer Perceptron (MLP)](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) optimizes the log-loss function using LBFGS or stochastic gradient descent.
   10. **model1.py**: A [Logistic Regression (baseline)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) model (also known as logit or MaxEnt) is a popular for classification problems and is our **baseline model** for this project.
-  11. svc.py: A [C-Support Vector Classification](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) is a linear support vector classification model.
+  11. **svc.py**: A [C-Support Vector Classification](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) is a linear support vector classification model.
 - model_eval.py: Contains the function that evaluates all 11 models and plots a Precision-Recall curve to compare model results.
 - hpo_tune.py: Is an interactive helper function to run hyper-parameter tuning (HPO) for any model based on user selection.
 - sample_submission.csv, test.csv, train.csv is the evaluation, testing and training data set respectively. 
