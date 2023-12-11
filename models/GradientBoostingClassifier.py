@@ -26,8 +26,11 @@ class GradientBoostingClassifierModel:
                                                             'n_estimators', 'n_iter_no_change', 'random_state', 'subsample', 'tol', 
                                                             'validation_fraction', 'verbose', 'warm_start'])
         
+        Best parameters found:
+         {'criterion': 'friedman_mse', 'learning_rate': 1, 'max_features': 'sqrt', 'min_samples_split': 4, 'n_estimators': 100}
+        
         """
-        self.model = GradientBoostingClassifier(n_estimators = 100, learning_rate = 1.0, max_depth = 1, random_state = 0)
+        self.model = GradientBoostingClassifier(n_estimators = 100, min_samples_split=4, learning_rate = 1.0, max_depth = 1, criterion = 'friedman_mse', max_features = 'sqrt')
 
     def train(self, X_train, y_train):
         self.model.fit(X_train.todense(), y_train)
