@@ -194,7 +194,7 @@ if __name__ == '__main__':
     clf = GridSearchCV(mlp_model, parameter_space, n_jobs=-1, cv=5)
     
     #apply fit
-    if model_to_tune == 'NaiveBayes': 
+    if model_to_tune == 'NaiveBayes' or model_to_tune == 'GradientBoosting': 
         clf.fit (X_train.todense(), y_train) # X is train samples and y is the corresponding labels
     else: 
         clf.fit (X_train, y_train) # X is train samples and y is the corresponding labels
