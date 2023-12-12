@@ -43,7 +43,7 @@ class MLPClassifierModel:
 
         
         """
-        self.model = MLPClassifier(activation ='tanh', alpha=0.05, hidden_layer_sizes=(20,), learning_rate='constant', solver='sgd')
+        self.model = MLPClassifier(max_iter = 1000, activation = 'relu', solver='adam', learning_rate='constant', alpha=0.05, hidden_layer_sizes=(1,))
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
