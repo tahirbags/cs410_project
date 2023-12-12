@@ -30,10 +30,7 @@ class SVCModel:
         Best parameters found:
          {'fit_intercept': 1, 'loss': 'hinge', 'multi_class': 'ovr', 'penalty': 'l2'}
         """
-        self.model = LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
-          intercept_scaling=1, loss='hinge', max_iter=1000,
-          multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
-          verbose=0)
+        self.model = LinearSVC(max_iter=1000, loss='hinge', verbose = 0, C=1.0, dual=True)
         
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
