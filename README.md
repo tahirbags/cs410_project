@@ -40,7 +40,17 @@ Lastly, we planned and recorded the demo video together.
 ## Install and Usage
 ### 1. To Start
 - Download this project (cs410_proj) and unzip the directory.
-- Ensure you have a version of Python 3.0+ installed on your computer.
+- Download Python 3.6+
+- Install scikit learn 
+```
+pip install -U scikit-learn
+```
+- Create (and activate) a virtual env 
+```
+python3.6 -m venv myvenv
+source myvenv/bin/activate
+```
+
 
 
 ### 2. To add new NLP Models
