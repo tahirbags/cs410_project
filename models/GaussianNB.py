@@ -26,7 +26,7 @@ class GaussianNBModel:
         Best parameters found:
          {'var_smoothing': 1.0}
         """
-        self.model = GaussianNB(var_smoothing=1.0)
+        self.model = GaussianNB(var_smoothing=0.5)
 
     def train(self, X_train, y_train):
         self.model.fit(X_train.todense(), y_train)
