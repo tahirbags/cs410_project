@@ -152,4 +152,4 @@ python3 model_eval.py
 ```
 
 - Run the model with the new parameters against the test dataset and compare precision, recall, F1 scores.
-- Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 
+- Repeat Steps 1-4 until you've got the best precision, recall, F1 score. 
