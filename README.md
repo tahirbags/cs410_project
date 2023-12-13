@@ -127,6 +127,7 @@ parameter_space = {
 ```
 
 - Once you've updated parameters for the model you'd like to tune, Open Terminal and run `hpo_tune.py`
+- **ATTENTION**: HPO Tuning can take 10 - 15 mins to complete, depending on how many parameters you select. 
 
 ```
 python3 hpo_tune.py
