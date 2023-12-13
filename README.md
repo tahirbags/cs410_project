@@ -81,15 +81,6 @@ Here's an example:
 # Add more models here
 ```
 
-### 3. To evaluate and compare all NLP Models in a Precision-Recall plot
-- Open Terminal and run `model_eval.py`
-   
-Here's an example:
-
-```
-python3 model_eval.py
-```
-
 ### 4. To optimize Hyperparameters (HPO) for all NLP Models
 
 - Open `hpo_tune.py`
@@ -150,5 +141,15 @@ Here's an example:
 Best parameters found:
  {'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': (20,), 'learning_rate': 'constant', 'solver': 'sgd'}
 ``` 
+
+### 4. To evaluate and compare all NLP Models in a Precision-Recall plot
+- Open Terminal and run `model_eval.py`
+   
+Here's an example:
+
+```
+python3 model_eval.py
+```
+
 - Run the model with the new parameters against the test dataset and compare precision, recall, F1 scores.
 - Repeat Steps 1-5 until you've got the best precision, recall, F1 score. 

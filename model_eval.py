@@ -34,7 +34,7 @@ def evaluate_kmeans(model, X_test):
 
 
 def evaluate_lda(model, X_test):
-     """Evaluates LDA model using Perplexity, a lower score is better
+    """Evaluates LDA model using Perplexity, a lower score is better
     
     Parameters
     ----------
@@ -56,7 +56,7 @@ def evaluate_lda(model, X_test):
 
 
 def load_and_preprocess_data(csv_path):
-     """Loads data, performs simple pre-processing, splits into test and train datasets
+    """Loads data, performs simple pre-processing, splits into test and train datasets
     
     Parameters
     ----------
@@ -86,7 +86,7 @@ def load_and_preprocess_data(csv_path):
     return X_train, X_test, y_train, y_test
 
 def load_model(model_path, class_name):
-     """Loads and initializes a specific model
+    """Loads and initializes a specific model
     
     Parameters
     ----------
@@ -149,19 +149,18 @@ if __name__ == '__main__':
     # List of models to evaluate - each entry is a (file_path, class_name) tuple
     models_to_evaluate = [
         ('models/model1.py', 'LogisticModel'),
-        ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), 
-        ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'),
-        ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), 
-        ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
+        # ('models/RandomForestClassifier.py', 'RandomForestClassifierModel'), 
+        # ('models/AdaBoostClassifier.py', 'AdaBoostClassifierModel'),
+        # ('models/DecisionTreeClassifier.py', 'DecisionTreeClassifierModel'), 
+        # ('models/KNeighborsClassifier.py', 'KNeighborsClassifierModel'), #TB
 
-        ('models/Kmeans.py', 'KMeansModel'),
-        ('models/LatentDirichletAllocation.py', 'LDAModel'),
+        # ('models/Kmeans.py', 'KMeansModel'),
+        # ('models/LatentDirichletAllocation.py', 'LDAModel'),
 
         ('models/GaussianNB.py', 'GaussianNBModel'), 
-        ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), 
-        ('models/svc.py', 'SVCModel'),
-        ('models/mlp.py', 'MLPClassifierModel'), 
-
+        # ('models/GradientBoostingClassifier.py', 'GradientBoostingClassifierModel'), 
+        # ('models/svc.py', 'SVCModel'),
+        # ('models/mlp.py', 'MLPClassifierModel'), 
     ]
     
     fig, ax = plt.subplots()
@@ -200,7 +199,7 @@ if __name__ == '__main__':
             ax.plot(recall, precision, c=colors, label=f'{class_name}')
 
     # performance evaluation metrics 
-    print(classification_report(y_score, y_test))
+    # print(classification_report(y_score, y_test))
 
     # Add axis labels and title to the plot, outside the loop
     ax.set_title('Precision-Recall Curve')

@@ -37,7 +37,7 @@ class RandomForestClassifierModel:
         
         Finally, re-increased n_estimators to 500, for final F-measure of 0.8080
         """
-        self.model = RandomForestClassifier(n_estimators=500, max_features="sqrt", min_samples_split=20, criterion="log_loss", random_state=42)
+        self.model = RandomForestClassifier(n_estimators=500, max_features="sqrt", min_samples_split=20, criterion="gini", random_state=42)
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
