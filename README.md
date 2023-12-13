@@ -40,7 +40,7 @@ Lastly, we planned and recorded the demo video together.
 ## Install and Usage
 ### 1. To Start
 - Download this project (cs410_proj) and unzip the directory.
-- Download Python 3.6+
+- Download Python 3.6+. **Note: We faced some compatibility issues with Python 3.11.x. Please try switching Python 3.6.x if you are having trouble.**
 
 - Create (and activate) a virtual env 
 ```
