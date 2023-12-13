@@ -200,7 +200,7 @@ if __name__ == '__main__':
             ax.plot(recall, precision, c=colors, label=f'{class_name}')
 
     # performance evaluation metrics 
-    print(classification_report(y_score, y_test))
+    #print(classification_report(y_score, y_test))
 
     # Add axis labels and title to the plot, outside the loop
     ax.set_title('Precision-Recall Curve')
