@@ -44,12 +44,12 @@ Lastly, we planned and recorded the demo video together.
 
 - Create (and activate) a virtual env 
 ```
-python3.6 -m venv myvenv
+python -m venv myvenv
 source myvenv/bin/activate
 ```
 - Install scikit learn, pandas, matplotlib
 ```
-pip install -U scikit-learn
+pip install scikit-learn
 pip install pandas
 pip install matplotlib
 ```
