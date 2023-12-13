@@ -81,7 +81,7 @@ Here's an example:
 # Add more models here
 ```
 
-### 4. To optimize Hyperparameters (HPO) for all NLP Models
+### 3. To optimize Hyperparameters (HPO) for all NLP Models
 
 - Open `hpo_tune.py`
 - Choose a model that you want to tune
