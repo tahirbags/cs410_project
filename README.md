@@ -90,12 +90,6 @@ Here's an example:
 python3 model_eval.py
 ```
 
-
-### 4. To optimize Hyperparameters (HPO) for the LDA and K-Means Model
-<! --- Aryan, please add text here -->
-
-
-
 ### 5. To optimize Hyperparameters (HPO) for all remaining NLP Models
 
 - Open `hpo_tune.py`
