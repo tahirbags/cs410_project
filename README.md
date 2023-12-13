@@ -41,17 +41,18 @@ Lastly, we planned and recorded the demo video together.
 ### 1. To Start
 - Download this project (cs410_proj) and unzip the directory.
 - Download Python 3.6+
-- Install scikit learn 
-```
-pip install -U scikit-learn
-```
+
 - Create (and activate) a virtual env 
 ```
 python3.6 -m venv myvenv
 source myvenv/bin/activate
 ```
-
-
+- Install scikit learn, pandas, matplotlib
+```
+pip install -U scikit-learn
+pip install pandas
+pip install matplotlib
+```
 
 ### 2. To add new NLP Models
 - Open `model_eval.py`
