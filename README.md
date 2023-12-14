@@ -1,11 +1,11 @@
 # Leaderboard Competition Creation using Natural Language Processing with disaster tweets dataset
 
 #### Team: "HAAAT" for CS410 Group Project
-#### Members: *H*arish Venkata (hkv2), *A*brielle Agron (aa106), *A*ryan Gandhi (aryang6), *A*shwin Saxena (ashwins2), *T*ahir Bagasrawala (tahirib2)
+#### Members: <ins>*H*</ins>arish Venkata (hkv2), <ins>*A*</ins>brielle Agron (aa106), <ins>*A*</ins>ryan Gandhi (aryang6), <ins>*A*</ins>shwin Saxena (ashwins2), <ins>*T*</ins>ahir Bagasrawala (tahirib2)
 
 <font size=5>[README file](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description)</font> inspired by this previous project.
 
-<font size=5>[Demo Video Link](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov)</font>
+<font size=5>[Project Presentation Video - How to install and use app](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov)</font>
 
 ## Project Description
 *Leaderboard Competition* evaluates several generative and descriptive classifiers against [Kaggle’s Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) to predict which tweets are about real disasters and which are not.
