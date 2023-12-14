@@ -5,7 +5,7 @@
 
 <font size=5>[README file](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description)</font> inspired by this previous project.
 
-<font size=5>[Demo Video Link](https://youtu.be/8bDu_KHNICA)</font>  <! --- update link and video presentation -->
+<font size=5>[Demo Video Link]([https://youtu.be/8bDu_KHNICA](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov))</font>
 
 ## Project Description
 *Leaderboard Competition* evaluates several generative and descriptive classifiers against [Kaggle’s Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) to predict which tweets are about real disasters and which are not.
