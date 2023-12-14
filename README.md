@@ -5,7 +5,7 @@
 
 <font size=5>[README file](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description)</font> inspired by this previous project.
 
-<font size=5>[Demo Video Link]([https://youtu.be/8bDu_KHNICA](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov))</font>
+<font size=5>[Demo Video Link](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov))</font>
 
 ## Project Description
 *Leaderboard Competition* evaluates several generative and descriptive classifiers against [Kaggle’s Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) to predict which tweets are about real disasters and which are not.
@@ -25,7 +25,7 @@ This project falls under Theme: Leaderboard Competition.
   6. **Kmeans.py**: A [K-Means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) model clusters data by trying to separate samples in n groups of equal variance, minimizing a criterion known as the inertia or within-cluster sum-of-squares.
   7. **LatentDirichletAllocation.py**: A [Latent Dirichlet Allocation (LDA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html) model is a generative probabilistic model for collections of discrete dataset such as text corpora. It is also a topic model that is used for discovering abstract topics from a collection of documents.
   8. **RandomForestClassifier.py**: A [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) is a meta estimator that fits several decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
-  9 **mlp.py**: A [Multi-Layer Perceptron (MLP)](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) optimizes the log-loss function using LBFGS or stochastic gradient descent.
+  9. **mlp.py**: A [Multi-Layer Perceptron (MLP)](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html) optimizes the log-loss function using LBFGS or stochastic gradient descent.
   10. **model1.py**: A [Logistic Regression (baseline)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) model (also known as logit or MaxEnt) is a popular for classification problems and is our **baseline model** for this project.
   11. **svc.py**: A [C-Support Vector Classification](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) is a linear support vector classification model.
 - model_eval.py: Contains the function that evaluates all 11 models and plots a Precision-Recall curve to compare model results.
