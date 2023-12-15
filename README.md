@@ -5,7 +5,7 @@
 
 <font size=5>[README file](https://github.com/nilakrishnan/CS_410_Final_Project/blob/main/README.md#project-description)</font> inspired by this previous project.
 
-<font size=5>[Project Presentation Video - How to install and use app](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov)</font>
+<font size=5>[Project Presentation Video - How to install and use app](https://www.youtube.com/watch?v=QKsb__Nze-c)</font>
 
 ## Project Description
 *Leaderboard Competition* evaluates several generative and descriptive classifiers against [Kaggle’s Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started/data) to predict which tweets are about real disasters and which are not.
@@ -15,7 +15,7 @@ This project falls under Theme: Leaderboard Competition.
 
 ## Project Structure and Source Code
 *Leaderboard Competition* soure code consists of following:
-- /docs: Documentation for (1) [Project Final Presentation](https://github.com/tahirbags/cs410_project_public/blob/main/docs/final-project-slides.pdf) (2) [Project Progress Status Report](https://github.com/tahirbags/cs410_project_public/blob/main/docs/cs410_project_status_report.pdf) (3) [Project Presentation Video](https://github.com/tahirbags/cs410_project_public/blob/main/docs/CS410%20Final%20Demo.mov)
+- /docs: Documentation for (1) [Project Final Presentation](https://github.com/tahirbags/cs410_project_public/blob/main/docs/final-project-slides.pdf) (2) [Project Progress Status Report](https://github.com/tahirbags/cs410_project_public/blob/main/docs/cs410_project_status_report.pdf) (3) [Project Presentation Video](https://www.youtube.com/watch?v=QKsb__Nze-c)
 - /models: 11 total models (incl. baseline), a combination of discriminative and generative classifiers, were developed, tuned and tested against the dataset.
   1. **AdaBoostClassifer.py**: [AdaBoost classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html) is a meta-estimator that begins by fitting a classifier on the original dataset and then fits additional copies of the classifier on the same dataset but where the weights of incorrectly classified instances are adjusted such that subsequent classifiers focus more on difficult cases. 
   2. **DecisionTreeClassifier.py**: [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) predicts the value of a target variable by learning simple decision rules inferred from the data features. A tree can be seen as a piecewise constant approximation.
